@@ -1,0 +1,20 @@
+{
+  "checkedAt": "2026-10-12T13:06:21.574Z",
+  "changedFiles": 71,
+  "changedBytes": 1855699,
+  "completeWorkingTreeBytes": 2794244,
+  "exportAssetCount": 14,
+  "exportBytes": 629630,
+  "manifestSha256": "cad1c0da156a6937602dcc60c7ac1f03b3d7a2f9961b986b98bf61479916ca99",
+  "assetInventoryExact": true,
+  "assetHashesValid": true,
+  "disallowedPaths": [],
+  "unnecessaryArtifacts": [],
+  "symlinks": [],
+  "protectedTrackedChanges": [],
+  "gitSubmodules": [],
+  "sourceCommitPreserved": true,
+  "ignoreFileBudget": [
+    "web/.gitignore"
+  ]
+}

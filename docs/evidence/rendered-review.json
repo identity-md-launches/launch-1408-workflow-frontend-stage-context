@@ -1,0 +1,71 @@
+{
+  "layouts": [
+    {
+      "width": 1440,
+      "scrollWidth": 1440,
+      "bodyWidth": 1440,
+      "fonts": true
+    },
+    {
+      "width": 1024,
+      "scrollWidth": 1024,
+      "bodyWidth": 1024,
+      "fonts": true
+    },
+    {
+      "width": 768,
+      "scrollWidth": 768,
+      "bodyWidth": 768,
+      "fonts": true
+    },
+    {
+      "width": 390,
+      "scrollWidth": 390,
+      "bodyWidth": 390,
+      "fonts": true
+    },
+    {
+      "width": 320,
+      "scrollWidth": 320,
+      "bodyWidth": 320,
+      "fonts": true
+    }
+  ],
+  "contrast": [
+    {
+      "selector": "body",
+      "foreground": "rgb(240, 238, 228)",
+      "background": "rgb(16, 17, 14)",
+      "ratio": 16.287143233984363
+    },
+    {
+      "selector": ".cell-panel",
+      "foreground": "rgb(240, 238, 228)",
+      "background": "rgb(22, 24, 19)",
+      "ratio": 15.376929361101531
+    },
+    {
+      "selector": ".button.primary",
+      "foreground": "rgb(16, 17, 14)",
+      "background": "rgb(239, 189, 88)",
+      "ratio": 10.90620265346379
+    },
+    {
+      "selector": ".trade-card",
+      "foreground": "rgb(240, 238, 228)",
+      "background": "rgb(22, 24, 19)",
+      "ratio": 15.376929361101531
+    },
+    {
+      "selector": ".helper",
+      "foreground": "rgb(167, 174, 155)",
+      "background": "rgb(16, 17, 14)",
+      "ratio": 8.272796888454348
+    }
+  ],
+  "errors": [],
+  "resourceFailures": [],
+  "desktopViolations": [],
+  "mobileViolations": [],
+  "note": "Mocked RPC data; these screenshots do not represent live onchain occupancy."
+}

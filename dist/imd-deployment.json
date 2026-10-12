@@ -1,0 +1,141 @@
+{
+  "version": 1,
+  "launchId": "90b62373-c8f8-49f1-829b-7d2f79a187f9",
+  "chainId": 1,
+  "sourceCommit": "2758b8e2759167be65de4cd13a6cd516b03484f2",
+  "attestationHash": "24b2b0e7265c214de31cacbb49a1986733f8a278a29892554d43ce496dc4f525",
+  "poolKey": {
+    "fee": 12500,
+    "hooks": "0x784ff9a3ac5d88a30bfff6f7f2a270161fbe6000",
+    "currency0": "0x8a4d48595c25b69c98a143ca502bdb46f8edf2a7",
+    "currency1": "0xd34a99bc0f67ae1bbd63c660e6d0b0dd03e263b7",
+    "tickSpacing": 60
+  },
+  "contracts": [
+    {
+      "name": "LaunchToken",
+      "address": "0x8a4d48595c25b69c98a143ca502bdb46f8edf2a7",
+      "abiHash": "1218ac11d65c3bde31e0cd0fcda7df972107125299127dccdf7c13d2d80c840a",
+      "abiPath": "abi/LaunchToken.json"
+    },
+    {
+      "name": "CombWall",
+      "address": "0x6f49097a7769ac791fc1fe8ddc231d2870bafea3",
+      "abiHash": "9cd6df5bc67ea152ed00d8fe7d5bcf11dff9e4f0e91b2eeab7c5b5fe9652fad8",
+      "abiPath": "abi/CombWall.json"
+    }
+  ],
+  "network": {
+    "chainId": 1,
+    "name": "Ethereum",
+    "testnet": false,
+    "rpcUrls": [
+      "https://ethereum-rpc.publicnode.com",
+      "https://eth.drpc.org"
+    ],
+    "explorer": "https://etherscan.io",
+    "nativeCurrency": {
+      "name": "Ether",
+      "symbol": "ETH",
+      "decimals": 18
+    },
+    "faucets": [],
+    "uniswapV4": {
+      "poolManager": "0x000000000004444c5dc75cb358380d2e3de08a90",
+      "universalRouter": "0x66a9893cc07d91d95644aedd05d03f95e1dba8af",
+      "quoter": "0x52f0e24d1c21c8a0cb1e5a5dd6198556bd9e1203",
+      "stateView": "0x7ffe42c4a5deea5b0fec41c94c136cf115597227",
+      "positionManager": "0xbd216513d74c8cf14cf4747e6aaa6420ff64ee9e",
+      "permit2": "0x000000000022d473030f116ddee9f6b43ac78ba3"
+    },
+    "pairToken": {
+      "address": "0xd34a99bc0f67ae1bbd63c660e6d0b0dd03e263b7",
+      "symbol": "IMD",
+      "name": "Identity.md",
+      "decimals": 18
+    },
+    "otherPairTokens": [
+      {
+        "id": "fwa",
+        "address": "0xa0df17b5ac76ababa36e1450e2cbcd18a620c845",
+        "symbol": "FWA",
+        "name": "Fake World Assets",
+        "decimals": 18
+      }
+    ]
+  },
+  "walletAddChain": {
+    "chainId": "0x1",
+    "chainName": "Ethereum",
+    "rpcUrls": [
+      "https://ethereum-rpc.publicnode.com",
+      "https://eth.drpc.org"
+    ],
+    "nativeCurrency": {
+      "name": "Ether",
+      "symbol": "ETH",
+      "decimals": 18
+    },
+    "blockExplorerUrls": [
+      "https://etherscan.io"
+    ]
+  },
+  "assets": [
+    {
+      "path": "abi/CombWall.json",
+      "sha256": "1630b6f3c8ce54b7145db4697078bc921660668367b26bc22fede282c697cb6e"
+    },
+    {
+      "path": "abi/LaunchToken.json",
+      "sha256": "b9970f012655bdf22c82b95153cff004891a331b58850d5d831264c024779b73"
+    },
+    {
+      "path": "assets/dm-sans-latin-400-normal-CW0RaeGs.woff2",
+      "sha256": "4ab51eb2cd7305d177187908d6397474d4520663f6c6e572feb0a64f4fa80006"
+    },
+    {
+      "path": "assets/dm-sans-latin-600-normal-Aqo67rzb.woff2",
+      "sha256": "6bb2b2645ba5eeaecf56322c543fa3a75b87b927977b9c03b1dabc4205089120"
+    },
+    {
+      "path": "assets/ethereum-BXeEzOjs.js",
+      "sha256": "0be542451f7a93f3d4d02d954a29a6e2a4882f60ee02790c11f0de20d5f44e06"
+    },
+    {
+      "path": "assets/index-Dm5jmTQg.css",
+      "sha256": "aa82aafe2980d1db999612b8fa928ead5d20788b90781e11520e94f3415d3a38"
+    },
+    {
+      "path": "assets/index-jzrY6kHd.js",
+      "sha256": "cd5e129cd39337944fb9b9bc1100d8d2e536ea8b551c0c8723131ad2d437e156"
+    },
+    {
+      "path": "assets/react-C2d6kFfn.js",
+      "sha256": "e7f7294e67003eb6676eec3fb5d482492a4a05a9e7b6a991ed690fcadd9dfbe6"
+    },
+    {
+      "path": "assets/space-grotesk-latin-400-normal-CJ-V5oYT.woff2",
+      "sha256": "65fd17fcbd2e2f522940b5f67ead3d23329e02891aa5495e74d11a499c0b0673"
+    },
+    {
+      "path": "assets/space-grotesk-latin-500-normal-lFbtlQH6.woff2",
+      "sha256": "1b1a8131d9edf975d9decee81e2f2bf504812f7a4f498e5500f28a613e22e64c"
+    },
+    {
+      "path": "favicon.svg",
+      "sha256": "91c6287856d8b21875463cc9a46706bb110c503410752a7f052c83bb7b07f4f6"
+    },
+    {
+      "path": "index.html",
+      "sha256": "458f268eefa1fe3ad1a3c831c43c21fcfd9710531f92fa88b9595622f4a2489e"
+    },
+    {
+      "path": "licenses/DM-Sans-OFL.txt",
+      "sha256": "6fbd040a29c2037a765dfb9f2561e9965b5c95c6dcb5dce516089d63d5f17af7"
+    },
+    {
+      "path": "licenses/Space-Grotesk-OFL.txt",
+      "sha256": "18a4de52385f6b988782639d5d0cc1326e5a8c2de9a7f01d7b20d9aedcc60943"
+    }
+  ]
+}

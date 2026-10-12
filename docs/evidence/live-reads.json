@@ -1,0 +1,74 @@
+{
+  "checkedAt": "2026-10-12T12:57:01.343Z",
+  "readOnly": true,
+  "transactionsBroadcast": 0,
+  "chainId": 1,
+  "block": "26176537",
+  "blockTimestamp": 1791809819,
+  "token": {
+    "symbol": "COMB",
+    "decimals": 18,
+    "supply": "1000000000"
+  },
+  "wall": {
+    "claimedCount": 0,
+    "firstBatchOwners": 128,
+    "firstBatchMessages": 128
+  },
+  "uniswapContracts": [
+    {
+      "name": "poolManager",
+      "address": "0x000000000004444c5dc75cb358380d2e3de08a90",
+      "hasCode": true
+    },
+    {
+      "name": "universalRouter",
+      "address": "0x66a9893cc07d91d95644aedd05d03f95e1dba8af",
+      "hasCode": true
+    },
+    {
+      "name": "quoter",
+      "address": "0x52f0e24d1c21c8a0cb1e5a5dd6198556bd9e1203",
+      "hasCode": true
+    },
+    {
+      "name": "stateView",
+      "address": "0x7ffe42c4a5deea5b0fec41c94c136cf115597227",
+      "hasCode": true
+    },
+    {
+      "name": "positionManager",
+      "address": "0xbd216513d74c8cf14cf4747e6aaa6420ff64ee9e",
+      "hasCode": true
+    },
+    {
+      "name": "permit2",
+      "address": "0x000000000022d473030f116ddee9f6b43ac78ba3",
+      "hasCode": true
+    }
+  ],
+  "pool": {
+    "poolId": "0x27dfa230a5750e6ac0c358384c8b4385c6318eb072eb704117408e8d43a88455",
+    "poolKey": {
+      "fee": 12500,
+      "hooks": "0x784ff9a3ac5d88a30bfff6f7f2a270161fbe6000",
+      "currency0": "0x8a4d48595c25b69c98a143ca502bdb46f8edf2a7",
+      "currency1": "0xd34a99bc0f67ae1bbd63c660e6d0b0dd03e263b7",
+      "tickSpacing": 60
+    },
+    "sqrtPriceX96": "4295128740",
+    "tick": -887272,
+    "protocolFee": 0,
+    "lpFee": 12500,
+    "liquidity": "0",
+    "pairSymbol": "IMD",
+    "pairDecimals": 18
+  },
+  "quote": {
+    "input": "1 IMD",
+    "estimatedOutput": "392515.152799552868130412 COMB",
+    "gasEstimate": "346834",
+    "method": "eth_call / simulateContract",
+    "broadcast": false
+  }
+}

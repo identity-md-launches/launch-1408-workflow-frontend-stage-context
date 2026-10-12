@@ -1,0 +1,10 @@
+{
+  "checkedAt": "2026-10-12T13:05:22Z",
+  "measurement": "Complete baseline Git history plus all source, export and evidence in an isolated test/scratch repository; final size-record bookkeeping is additional small JSON/Markdown only.",
+  "bundleBytes": 1011669,
+  "limitBytes": 8388608,
+  "withinLimit": true,
+  "baselineSourceCommit": "2758b8e2759167be65de4cd13a6cd516b03484f2",
+  "runtimeManifestSha256": "cad1c0da156a6937602dcc60c7ac1f03b3d7a2f9961b986b98bf61479916ca99",
+  "originalGitMetadataModified": false
+}

@@ -1,0 +1,37 @@
+{
+  "name": "the-comb-web",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "node scripts/export.mjs --prepare && vite",
+    "build": "vite build && node scripts/export.mjs",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:browser": "playwright test",
+    "validate:export": "node scripts/export.mjs --check",
+    "preview": "vite preview --host 0.0.0.0",
+    "probe:rpc": "node scripts/probe-rpc.mjs",
+    "format:check": "prettier --check src tests scripts vite.config.ts playwright.config.ts"
+  },
+  "dependencies": {
+    "react": "19.2.4",
+    "react-dom": "19.2.4",
+    "viem": "2.47.0"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "4.11.1",
+    "@fontsource/dm-sans": "5.2.8",
+    "@fontsource/space-grotesk": "5.2.10",
+    "@playwright/test": "1.58.2",
+    "@types/node": "22.19.11",
+    "@types/react": "19.2.14",
+    "@types/react-dom": "19.2.3",
+    "@vitejs/plugin-react": "4.7.0",
+    "playwright-core": "1.58.2",
+    "prettier": "3.5.3",
+    "typescript": "5.9.3",
+    "vite": "6.4.1",
+    "vitest": "3.2.4"
+  }
+}

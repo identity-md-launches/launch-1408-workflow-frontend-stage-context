@@ -1,0 +1,14 @@
+{
+  "textEnlargement200Percent": {
+    "width": 1024,
+    "scrollWidth": 1024
+  },
+  "rtlMobile": {
+    "width": 390,
+    "scrollWidth": 390
+  },
+  "dialogFocusContainment": true,
+  "dialogFocusRestored": true,
+  "forcedColorsInteraction": true,
+  "nativeBrowserZoom": "Not verified; text enlargement is a separate check."
+}

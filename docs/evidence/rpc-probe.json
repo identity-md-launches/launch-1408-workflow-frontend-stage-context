@@ -1,0 +1,45 @@
+{
+  "checkedAt": "2026-10-12T12:56:12.731Z",
+  "readOnly": true,
+  "expectedChainId": 1,
+  "endpoints": [
+    {
+      "url": "https://ethereum-rpc.publicnode.com",
+      "chainId": 1,
+      "contracts": [
+        {
+          "name": "LaunchToken",
+          "address": "0x8a4d48595c25b69c98a143ca502bdb46f8edf2a7",
+          "hasCode": true,
+          "codeBytes": 1335
+        },
+        {
+          "name": "CombWall",
+          "address": "0x6f49097a7769ac791fc1fe8ddc231d2870bafea3",
+          "hasCode": true,
+          "codeBytes": 3751
+        }
+      ],
+      "verified": true
+    },
+    {
+      "url": "https://eth.drpc.org",
+      "chainId": 1,
+      "contracts": [
+        {
+          "name": "LaunchToken",
+          "address": "0x8a4d48595c25b69c98a143ca502bdb46f8edf2a7",
+          "hasCode": true,
+          "codeBytes": 1335
+        },
+        {
+          "name": "CombWall",
+          "address": "0x6f49097a7769ac791fc1fe8ddc231d2870bafea3",
+          "hasCode": true,
+          "codeBytes": 3751
+        }
+      ],
+      "verified": true
+    }
+  ]
+}
