@@ -251,7 +251,7 @@ export function ConnectGate({
 }) {
   if (!wallet.account)
     return (
-      <button className="button primary wide" onClick={onConnect}>
+      <button type="button" className="button primary wide" onClick={onConnect}>
         <Icon name="wallet" />
         Connect wallet
       </button>

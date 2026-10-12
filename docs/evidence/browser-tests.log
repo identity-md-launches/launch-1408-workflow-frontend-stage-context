@@ -2,38 +2,45 @@
 > the-comb-web@1.0.0 test:browser
 > playwright test
 
-[2m[WebServer] [22m(node:234) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(node:105) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
 [2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
 
-Running 19 tests using 1 worker
+Running 26 tests using 1 worker
 
-(node:246) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(node:117) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
 (Use `node --trace-warnings ...` to show where the warning was created)
-(node:246) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(node:117) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
 (Use `node --trace-warnings ...` to show where the warning was created)
-  ✓   1 tests/browser.spec.ts:23:1 › production subpath loads all 1,024 real controls; no wallet has an actionable recovery (1.3s)
-  ✓   2 tests/browser.spec.ts:47:1 › claim validates UTF-8 bytes, refreshes ownership and adds Keeper glow (1.9s)
-  ✓   3 tests/browser.spec.ts:79:1 › carve after cooldown and release require ownership and explicit confirmation (4.7s)
-  ✓   4 tests/browser.spec.ts:112:1 › unknown wallet chain uses supplied add-chain parameters and a single switch control (1.0s)
-  ✓   5 tests/browser.spec.ts:142:1 › connection and network-switch rejection are recoverable (1.4s)
-  ✓   6 tests/browser.spec.ts:181:1 › transaction rejection unlocks the control; simulation failure never requests a signature (2.6s)
-  ✓   7 tests/browser.spec.ts:218:1 › pending transactions block duplicate submission until receipt confirmation (2.6s)
-  ✓   8 tests/browser.spec.ts:244:1 › buy IMD → COMB performs exact two approvals and simulates attested router payload (3.3s)
-  ✓   9 tests/browser.spec.ts:321:1 › sell uses COMB approval, invalidates stale quotes and never sends after a swap simulation revert (2.1s)
-  ✓  10 tests/browser.spec.ts:354:1 › code verification and initialization gate swaps; zero current-tick liquidity can still quote (3.4s)
-  ✓  11 tests/browser.spec.ts:398:1 › keyboard navigation, jump to last cell and safe rendering of onchain strings (1.2s)
-  ✓  12 tests/browser.spec.ts:424:1 › account and network events invalidate permissions and quoted state (1.8s)
-  ✓  13 tests/browser.spec.ts:463:1 › token transfer, allowance and transferFrom have reviewed addresses and live balance checks (4.8s)
-  ✓  14 tests/browser.spec.ts:530:1 › tampered implementation ABI prevents application startup (472ms)
-  ✓  15 tests/browser.spec.ts:547:1 › desktop/mobile rendered export: accessibility, fonts, contrast and overflow evidence (21.0s)
-  ✓  16 tests/browser.spec.ts:658:1 › public RPC failover and connected-wallet fallback both read the live interface (2.2s)
-  ✓  17 tests/browser.spec.ts:683:1 › expired quotes and expired Permit2 grants require a fresh explicit step (3.6s)
-  ✓  18 tests/browser.spec.ts:708:1 › the signer rechecks the account even if the wallet fails to emit an account event (1.5s)
-  ✓  19 tests/browser.spec.ts:731:1 › 200% text enlargement, RTL layout, keyboard dialog focus and forced colors remain usable (1.1s)
+  ✓   1 tests/browser.spec.ts:23:1 › production subpath loads all 1,024 real controls; no wallet has an actionable recovery (1.0s)
+  ✓   2 tests/browser.spec.ts:47:1 › claim validates UTF-8 bytes, refreshes ownership and adds Keeper glow (2.0s)
+  ✓   3 tests/browser.spec.ts:79:1 › carve after cooldown and release require ownership and explicit confirmation (2.1s)
+  ✓   4 tests/browser.spec.ts:112:1 › unknown wallet chain uses supplied add-chain parameters and a single switch control (866ms)
+  ✓   5 tests/browser.spec.ts:142:1 › connection and network-switch rejection are recoverable (1.1s)
+  ✓   6 tests/browser.spec.ts:181:1 › transaction rejection unlocks the control; simulation failure never requests a signature (1.4s)
+  ✓   7 tests/browser.spec.ts:218:1 › pending transactions block duplicate submission until receipt confirmation (1.4s)
+  ✓   8 tests/browser.spec.ts:244:1 › buy IMD → COMB performs exact two approvals and simulates attested router payload (2.8s)
+  ✓   9 tests/browser.spec.ts:321:1 › sell uses COMB approval, invalidates stale quotes and never sends after a swap simulation revert (1.8s)
+  ✓  10 tests/browser.spec.ts:354:1 › code verification and initialization gate swaps; zero current-tick liquidity can still quote (1.5s)
+  ✓  11 tests/browser.spec.ts:398:1 › keyboard navigation, jump to last cell and safe rendering of onchain strings (773ms)
+  ✓  12 tests/browser.spec.ts:424:1 › account and network events invalidate permissions and quoted state (866ms)
+  ✓  13 tests/browser.spec.ts:463:1 › token transfer, allowance and transferFrom have reviewed addresses and live balance checks (4.4s)
+  ✓  14 tests/browser.spec.ts:530:1 › tampered implementation ABI prevents application startup (344ms)
+  ✓  15 tests/browser.spec.ts:547:1 › desktop/mobile rendered export: accessibility, fonts, contrast and overflow evidence (18.8s)
+  ✓  16 tests/browser.spec.ts:658:1 › public RPC failover and connected-wallet fallback both read the live interface (1.8s)
+  ✓  17 tests/browser.spec.ts:683:1 › expired quotes and expired Permit2 grants require a fresh explicit step (2.6s)
+  ✓  18 tests/browser.spec.ts:708:1 › the signer rechecks the account even if the wallet fails to emit an account event (1.2s)
+  ✓  19 tests/browser.spec.ts:731:1 › 200% text enlargement, RTL layout, keyboard dialog focus and forced colors remain usable (933ms)
+  ✓  20 tests/revision.spec.ts:14:1 › revision: initial viewport prioritizes cells and claim controls (1.7s)
+  ✓  21 tests/revision.spec.ts:74:1 › revision: share image metadata resolves to a real 1200 by 630 image (334ms)
+  ✓  22 tests/revision.spec.ts:106:3 › revision: exact permission and swap review at step 1 (2.4s)
+  ✓  23 tests/revision.spec.ts:106:3 › revision: exact permission and swap review at step 2 (2.2s)
+  ✓  24 tests/revision.spec.ts:106:3 › revision: exact permission and swap review at step 3 (2.2s)
+  ✓  25 tests/revision.spec.ts:140:1 › revision: connecting preserves an anonymous claim draft without submitting (1.1s)
+  ✓  26 tests/revision.spec.ts:181:1 › revision: cell changes and account replacement still clear private drafts (1.0s)
 
-  19 passed (1.1m)
+  26 passed (1.0m)
 npm notice
-npm notice New major version of npm available! 10.9.7 -> 12.2.0
+npm notice New major version of npm available! 11.19.0 -> 12.2.0
 npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.0
 npm notice To update run: npm install -g npm@12.2.0
 npm notice

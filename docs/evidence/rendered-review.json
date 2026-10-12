@@ -59,8 +59,8 @@
     {
       "selector": ".helper",
       "foreground": "rgb(167, 174, 155)",
-      "background": "rgb(16, 17, 14)",
-      "ratio": 8.272796888454348
+      "background": "rgb(22, 24, 19)",
+      "ratio": 7.810468143183591
     }
   ],
   "errors": [],

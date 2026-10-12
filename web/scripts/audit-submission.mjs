@@ -11,9 +11,14 @@ const changed = [
   ...new Set([
     ...parse(run(["diff", "--name-only", "-z", "HEAD"])),
     ...parse(run(["ls-files", "--others", "--exclude-standard", "-z"])),
+    // The worker consumes this review response even when Git's local excludes hide it.
+    ...((await lstat(resolve(root, ".imd-responses.json")).catch(() => null))
+      ? [".imd-responses.json"]
+      : []),
   ]),
 ].filter((p) => !p.startsWith("test/scratch/"));
 const allowed = (p) =>
+  p === ".imd-responses.json" ||
   p === "web/.gitignore" ||
   (/^(web|dist|docs)\//.test(p) &&
     !p.split("/").some((part) => part.startsWith(".")));
@@ -25,13 +30,21 @@ const forbidden = changed.filter((p) =>
 );
 const symlinks = [];
 let changedBytes = 0;
+const deleted = [];
 for (const p of changed) {
-  const info = await lstat(resolve(root, p));
+  const info = await lstat(resolve(root, p)).catch((e) => {
+    if (e.code !== "ENOENT") throw e;
+    deleted.push(p);
+    return null;
+  });
+  if (!info) continue;
   if (info.isSymbolicLink()) symlinks.push(p);
   else if (info.isFile()) changedBytes += info.size;
 }
 const tracked = parse(run(["ls-files", "-z"]));
-const tree = [...new Set([...tracked, ...changed])];
+const tree = [...new Set([...tracked, ...changed])].filter(
+  (p) => !deleted.includes(p),
+);
 let treeBytes = 0;
 for (const p of tree) {
   const info = await stat(resolve(root, p));
@@ -76,6 +89,7 @@ const report = {
   checkedAt: new Date().toISOString(),
   changedFiles: changed.length,
   changedBytes,
+  deletedFiles: deleted,
   completeWorkingTreeBytes: treeBytes,
   exportAssetCount: actual.length,
   exportBytes: (await Promise.all(exported.map((p) => stat(p)))).reduce(
@@ -93,7 +107,18 @@ const report = {
   protectedTrackedChanges,
   gitSubmodules: submodules,
   sourceCommitPreserved:
-    run(["rev-parse", "HEAD"]).trim() === manifest.sourceCommit,
+    run(["cat-file", "-t", manifest.sourceCommit]).trim() === "commit" &&
+    run([
+      "diff",
+      manifest.sourceCommit,
+      "--",
+      "src",
+      "docs/abi",
+      "foundry.toml",
+      "remappings.txt",
+      "lib",
+      ".github",
+    ]).trim() === "",
   ignoreFileBudget: ["web/.gitignore"],
 };
 await writeFile(

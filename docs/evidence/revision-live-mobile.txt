@@ -1,0 +1,26 @@
+{
+  "rpcMocked": false,
+  "walletInjected": false,
+  "readStatus": "Read at block 26,176,702",
+  "cells": 1024,
+  "claimed": "Cells claimed0 / 1,024",
+  "map": {
+    "top": 362.6875,
+    "bottom": 474.6875
+  },
+  "message": {
+    "top": 631.9375,
+    "bottom": 699.9375
+  },
+  "action": {
+    "top": 738.125,
+    "bottom": 786.125
+  },
+  "fee": {
+    "top": 792.125,
+    "bottom": 811.921875
+  },
+  "width": 390,
+  "height": 844,
+  "scrollWidth": 390
+}

@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>The Comb share artwork</title>
+    <style>
+      @font-face {
+        font-family: "Space Grotesk";
+        src: url("./node_modules/@fontsource/space-grotesk/files/space-grotesk-latin-400-normal.woff2");
+      }
+      @font-face {
+        font-family: "DM Sans";
+        src: url("./node_modules/@fontsource/dm-sans/files/dm-sans-latin-400-normal.woff2");
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0; width: 1200px; height: 630px; overflow: hidden;
+        background: #10110e; color: #f0eee4; font-family: "DM Sans", sans-serif;
+      }
+      main { position: relative; padding: 56px 60px; height: 100%; }
+      .brand { display: flex; align-items: center; gap: 14px; font: 24px "Space Grotesk", sans-serif; }
+      .brand svg { width: 34px; height: 40px; }
+      h1 { position: relative; margin: 70px 0 24px; font: 400 60px/1.14 "Space Grotesk", sans-serif; letter-spacing: -0.045em; }
+      h1 span { color: #efbd58; }
+      p { font-size: 21px; line-height: 1.6; color: #a7ae9b; }
+      .wall { position: absolute; width: 320px; height: 520px; right: 30px; top: 55px; }
+      .footer { position: absolute; bottom: 48px; font-size: 17px; color: #a7ae9b; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="brand">
+        <svg viewBox="0 0 26 30" aria-hidden="true"><path d="M13 1 25 8v14l-12 7L1 22V8Z" fill="#3b2d13" stroke="#efbd58"/><path d="m13 9 5 3v6l-5 3-5-3v-6Z" fill="#efbd58"/></svg>
+        THE COMB
+      </div>
+      <svg class="wall" viewBox="0 0 320 520" aria-label="Decorative amber honeycomb">
+        <defs><path id="hex" d="M23 1 44 13v24L23 49 2 37V13Z"/></defs>
+        <g id="cells"></g>
+      </svg>
+      <h1>The swarm built the hive.<br/><span>The last wall is yours.</span></h1>
+      <p>1,024 cells. One for you.<br/>Claim a place. Leave your mark on Ethereum.</p>
+      <div class="footer">Built by agents. Left for humans.</div>
+    </main>
+    <script>
+      // Decorative artwork only: this pattern is not a snapshot of claimed cells.
+      document.getElementById("cells").innerHTML = Array.from({ length: 70 }, (_, i) => {
+        const row = Math.floor(i / 7), col = i % 7;
+        const bright = (col + row * 3) % 5 === 0;
+        const filled = bright || (col * 2 + row) % 3 === 0;
+        return `<use href="#hex" x="${col * 44 + (row % 2) * 22}" y="${row * 38}" fill="${bright ? '#6b4d1b' : filled ? '#453416' : '#1d2019'}" stroke="${bright ? '#ffda8b' : filled ? '#b98937' : '#3e4436'}" stroke-width="${bright ? 1.5 : 1}"/>`;
+      }).join("");
+    </script>
+  </body>
+</html>

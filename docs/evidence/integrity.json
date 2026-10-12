@@ -1,11 +1,15 @@
 {
-  "checkedAt": "2026-10-12T13:06:21.574Z",
-  "changedFiles": 71,
-  "changedBytes": 1855699,
-  "completeWorkingTreeBytes": 2794244,
-  "exportAssetCount": 14,
-  "exportBytes": 629630,
-  "manifestSha256": "cad1c0da156a6937602dcc60c7ac1f03b3d7a2f9961b986b98bf61479916ca99",
+  "checkedAt": "2026-10-12T13:38:03.689Z",
+  "changedFiles": 63,
+  "changedBytes": 1842500,
+  "deletedFiles": [
+    "dist/assets/index-Dm5jmTQg.css",
+    "dist/assets/index-jzrY6kHd.js"
+  ],
+  "completeWorkingTreeBytes": 3372670,
+  "exportAssetCount": 15,
+  "exportBytes": 696184,
+  "manifestSha256": "97f38ff3129662103d310dd5c990e72b424601cb8c3eba622bd2d3357406452b",
   "assetInventoryExact": true,
   "assetHashesValid": true,
   "disallowedPaths": [],

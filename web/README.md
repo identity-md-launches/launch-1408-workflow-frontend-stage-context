@@ -33,6 +33,7 @@ The original `docs/abi/` files and deployed Solidity remain unchanged. The optio
 
 - All 1,024 cells are native button controls. Scroll the grid in both directions; zoom from 100% to 200%; use arrow keys, Home/End or the numbered cell finder. Hover/focus previews the message, and selecting shows it in the inspector. Unknown cells are dashed until RPC reads succeed. Messages render as text, never HTML.
 - Claim, carve and release use the implementation ABI. The editor counts UTF-8 bytes with `TextEncoder`; the first carve is available 24 hours after the claim. Release requires explicit confirmation and clears the current message; historical events remain onchain.
+- Connecting from the editor does not submit it. An anonymous draft survives the first connection; selecting another cell, replacing a connected account or disconnecting clears the draft.
 - COMB is not required for any wall action. Only the connected wallet's own cell receives a Keeper glow when its live COMB balance is positive. Ownership and balances are invalidated across account/network changes.
 - Browser wallets use EIP-6963 discovery with an injected `window.ethereum` fallback. Missing wallets, connection rejection, account changes, disconnects and wrong networks have explicit states. Unknown-chain error 4902 (including nested/unknown-chain messages) triggers `wallet_addEthereumChain` with the supplied parameters, followed by another switch attempt.
 - Public reads try the supplied RPCs in order, then the connected wallet provider only on the correct chain. App code and the RPC chain ID must be verified before signing is enabled. Pool contract code, pair-token metadata and initialization are checked separately, so unavailable trading does not block the independent wall.
@@ -51,6 +52,16 @@ The sequence is explicit and allowance-dependent:
 
 Each approval is its own confirmed transaction. The visitor requests a fresh quote/allowance read afterward. Minimum output, rate, quote expiry, pool fee, route contracts and approval scope appear before signing. No USD price feed was supplied; the UI uses token units and explicitly says USD prices are unavailable.
 
+The permission/swap review and guaranteed minimum show full token precision. Estimated balances, rates and output summaries retain their compact display; the transaction payload and routing use the original base-unit amounts.
+
+## Share artwork and publication metadata
+
+`public/share-card.png` is the committed 1200×630 Open Graph/Twitter artwork, generated from `share-card.html` with the same local fonts, colors and hexagon geometry as the app. The honeycomb in the artwork is decorative, not a live occupancy snapshot. `index.html` includes image dimensions, descriptive alt text and a large Twitter card. Normal builds copy the PNG and include it in the deployment asset inventory.
+
+After editing the artwork, run `node scripts/share-card.mjs` from `web/` with Playwright Chromium installed (or set `PLAYWRIGHT_CHROMIUM_EXECUTABLE` as below), then `npm run build` and `npm run validate:export`. No image-generation service or external font request is used.
+
+No publication origin is supplied at this stage. The image paths are deliberately relative and resolve under the static hosting subpath. Once the publisher has the real public origin, replace the `og:image` and `twitter:image` values in `web/index.html` with that asset's absolute public URL, then rebuild and revalidate the manifest before publishing. External crawler/card rendering remains unverified until then; no guessed site URL is embedded.
+
 The collapsed token tools expose `transfer`, `approve` (including a zero-allowance revoke), and `transferFrom`. They validate checksummed/nonzero hex addresses, read balances and allowances, and show full addresses in a confirmation dialog. ENS resolution and WalletConnect are not implemented; a WalletConnect integration would require a requester-supplied public project ID. There are no owner settings: these deployed application contracts have no owner or setup functions. LP management and distributor actions are not part of these contracts or this assignment.
 
 ## Read-only network diagnostics
@@ -68,5 +79,7 @@ Playwright owns a bounded preview process at `/preview/` and closes it after the
 All wallet/RPC interaction tests intercept network requests. They do not broadcast Ethereum transactions. Test accounts and sample messages are confined to `tests/mock-chain.ts`; there is no demo mode, fixture state or mock provider in the production build.
 
 See [validation](../docs/VALIDATION.md), [design](../docs/DESIGN.md), [screenshots and raw results](../docs/evidence/), and [attribution](../docs/ATTRIBUTION.md). The root `DESIGN.md` request conflicts with the overriding allowed-path list, so the actual implemented-design document is delivered at `docs/DESIGN.md`.
+
+The bounded revision's reproductions, fixes and seven added browser regressions are documented in [the revision record](../docs/REVISION.md). Run `npm run test:browser -- revision.spec.ts` for that subset, or the full command above for all 26 tests. The revision was also checked on Node.js 24.21.0 / npm 11.19.0.
 
 Publishing, an IPFS CID, a site name, explorer verification and live transaction execution are outside this worker stage. No website was published and no contracts were redeployed. The control plane's later HTTP/RPC publication checks do not replace these browser tests.

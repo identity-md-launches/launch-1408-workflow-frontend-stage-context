@@ -1,0 +1,37 @@
+{
+  "checkedAt": "2026-10-12T13:30:05.593Z",
+  "rpcMocked": false,
+  "walletInjected": false,
+  "transactionsBroadcast": 0,
+  "consoleErrors": [],
+  "failedRequests": [],
+  "rpcResponses": [
+    {
+      "url": "https://ethereum-rpc.publicnode.com/",
+      "status": 200
+    },
+    {
+      "url": "https://ethereum-rpc.publicnode.com/",
+      "status": 200
+    },
+    {
+      "url": "https://ethereum-rpc.publicnode.com/",
+      "status": 200
+    },
+    {
+      "url": "https://ethereum-rpc.publicnode.com/",
+      "status": 200
+    },
+    {
+      "url": "https://ethereum-rpc.publicnode.com/",
+      "status": 200
+    }
+  ],
+  "readStatus": "Read at block 26,176,701",
+  "claimed": "0 / 1,024",
+  "cellCount": 1024,
+  "firstCell": "Cell 0, empty",
+  "connectedControl": "Connect wallet",
+  "runtimeManifestLoaded": true,
+  "verified": true
+}

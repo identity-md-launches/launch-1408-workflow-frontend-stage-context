@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { zeroAddress } from "viem";
 import type { Runtime } from "./config";
 import type { ChainData } from "./data";
@@ -34,9 +34,17 @@ export function WallPanel({
     snap?.account === wallet.account &&
     snap?.held !== NO_CELL &&
     snap?.held !== undefined;
+  const previous = useRef({ selected, account: wallet.account });
   useEffect(() => {
-    setMessage("");
+    // Keep an anonymous draft on first connection; clear on cell changes,
+    // account replacement, or disconnect so another wallet cannot inherit it.
+    if (
+      previous.current.selected !== selected ||
+      (previous.current.account && previous.current.account !== wallet.account)
+    )
+      setMessage("");
     setRelease(false);
+    previous.current = { selected, account: wallet.account };
   }, [selected, wallet.account]);
   useEffect(() => {
     const timer = setInterval(() => setNow(Date.now()), 1000);
@@ -73,10 +81,6 @@ export function WallPanel({
   }
   return (
     <aside className="cell-panel" aria-labelledby="cell-heading">
-      <div className="cell-eyebrow">
-        <span className="eyebrow">Your place in the hive</span>
-        <Icon name="hex" />
-      </div>
       <div className="cell-title">
         <h3 id="cell-heading">
           Cell{" "}
@@ -96,13 +100,7 @@ export function WallPanel({
         <p>
           Waiting for live wall data. You can explore the grid while it loads.
         </p>
-      ) : empty ? (
-        <p>
-          Every cell starts with a little silence.
-          <br />
-          What will you leave here?
-        </p>
-      ) : (
+      ) : !empty ? (
         <>
           <blockquote dir="auto">“{cell.message}”</blockquote>
           <div className="owner-label">
@@ -120,7 +118,7 @@ export function WallPanel({
             </div>
           )}
         </>
-      )}
+      ) : null}
       {hasCell && !owned ? (
         <div className="notice">
           <p>
@@ -157,7 +155,7 @@ export function WallPanel({
               <textarea
                 id="message"
                 name="message"
-                rows={4}
+                rows={3}
                 placeholder="I was here. And so were you."
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}

@@ -1,0 +1,436 @@
+
+> the-comb-web@1.0.0 test:browser
+> playwright test revision.spec.ts
+
+[2m[WebServer] [22m(node:34) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 7 tests using 1 worker
+
+(node:46) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:46) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  1 tests/revision.spec.ts:14:1 › revision: initial viewport prioritizes cells and claim controls (2.0s)
+(node:171) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:171) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  2 tests/revision.spec.ts:63:1 › revision: share image metadata resolves to a real 1200 by 630 image (12.4s)
+(node:295) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:295) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  3 tests/revision.spec.ts:83:3 › revision: exact permission and swap review at step 1 (14.6s)
+(node:419) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:419) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  4 tests/revision.spec.ts:83:3 › revision: exact permission and swap review at step 2 (14.7s)
+(node:544) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:544) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  5 tests/revision.spec.ts:83:3 › revision: exact permission and swap review at step 3 (14.5s)
+(node:668) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:668) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  6 tests/revision.spec.ts:107:1 › revision: connecting preserves an anonymous claim draft without submitting (14.3s)
+(node:793) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:793) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  7 tests/revision.spec.ts:131:1 › revision: cell changes and account replacement still clear private drafts (1.6s)
+
+
+  1) tests/revision.spec.ts:14:1 › revision: initial viewport prioritizes cells and claim controls ─
+
+    Error: [2mexpect([22m[31mreceived[39m[2m).[22mtoBeLessThanOrEqual[2m([22m[32mexpected[39m[2m)[22m
+
+    Expected: <= [32m844[39m
+    Received:    [31m923.5625[39m
+
+      49 |     expect.soft(measured.scrollY).toBe(0);
+      50 |     expect.soft(measured.scrollWidth).toBeLessThanOrEqual(viewport.width);
+    > 51 |     expect.soft(measured.cell.bottom).toBeLessThanOrEqual(viewport.height);
+         |                                       ^
+      52 |     if (viewport.width !== 320) {
+      53 |       expect.soft(measured.message.bottom).toBeLessThanOrEqual(viewport.height);
+      54 |       expect.soft(measured.action.bottom).toBeLessThanOrEqual(viewport.height);
+        at /root/.identitymd/work/552cb388-cfa0-4be1-af2a-faadaa394445/5037bcee-8984-4148-bc04-5fc4602116af/web/tests/revision.spec.ts:51:39
+
+    Error: [2mexpect([22m[31mreceived[39m[2m).[22mtoBeLessThanOrEqual[2m([22m[32mexpected[39m[2m)[22m
+
+    Expected: <= [32m844[39m
+    Received:    [31m1702.53125[39m
+
+      51 |     expect.soft(measured.cell.bottom).toBeLessThanOrEqual(viewport.height);
+      52 |     if (viewport.width !== 320) {
+    > 53 |       expect.soft(measured.message.bottom).toBeLessThanOrEqual(viewport.height);
+         |                                            ^
+      54 |       expect.soft(measured.action.bottom).toBeLessThanOrEqual(viewport.height);
+      55 |       expect.soft(measured.fee.bottom).toBeLessThanOrEqual(viewport.height);
+      56 |     }
+        at /root/.identitymd/work/552cb388-cfa0-4be1-af2a-faadaa394445/5037bcee-8984-4148-bc04-5fc4602116af/web/tests/revision.spec.ts:53:44
+
+    Error: [2mexpect([22m[31mreceived[39m[2m).[22mtoBeLessThanOrEqual[2m([22m[32mexpected[39m[2m)[22m
+
+    Expected: <= [32m844[39m
+    Received:    [31m1804.71875[39m
+
+      52 |     if (viewport.width !== 320) {
+      53 |       expect.soft(measured.message.bottom).toBeLessThanOrEqual(viewport.height);
+    > 54 |       expect.soft(measured.action.bottom).toBeLessThanOrEqual(viewport.height);
+         |                                           ^
+      55 |       expect.soft(measured.fee.bottom).toBeLessThanOrEqual(viewport.height);
+      56 |     }
+      57 |     expect.soft(measured.kickers).toBe(0);
+        at /root/.identitymd/work/552cb388-cfa0-4be1-af2a-faadaa394445/5037bcee-8984-4148-bc04-5fc4602116af/web/tests/revision.spec.ts:54:43
+
+    Error: [2mexpect([22m[31mreceived[39m[2m).[22mtoBeLessThanOrEqual[2m([22m[32mexpected[39m[2m)[22m
+
+    Expected: <= [32m844[39m
+    Received:    [31m1858.3125[39m
+
+      53 |       expect.soft(measured.message.bottom).toBeLessThanOrEqual(viewport.height);
+      54 |       expect.soft(measured.action.bottom).toBeLessThanOrEqual(viewport.height);
+    > 55 |       expect.soft(measured.fee.bottom).toBeLessThanOrEqual(viewport.height);
+         |                                        ^
+      56 |     }
+      57 |     expect.soft(measured.kickers).toBe(0);
+      58 |     expect.soft(parseFloat(measured.tradeHeading)).toBeLessThan(parseFloat(measured.h1));
+        at /root/.identitymd/work/552cb388-cfa0-4be1-af2a-faadaa394445/5037bcee-8984-4148-bc04-5fc4602116af/web/tests/revision.spec.ts:55:40
+
+    Error: [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m0[39m
+    Received: [31m5[39m
+
+      55 |       expect.soft(measured.fee.bottom).toBeLessThanOrEqual(viewport.height);
+      56 |     }
+    > 57 |     expect.soft(measured.kickers).toBe(0);
+         |                                   ^
+      58 |     expect.soft(parseFloat(measured.tradeHeading)).toBeLessThan(parseFloat(measured.h1));
+      59 |   }
+      60 |   await evidence("layout", results);
+        at /root/.identitymd/work/552cb388-cfa0-4be1-af2a-faadaa394445/5037bcee-8984-4148-bc04-5fc4602116af/web/tests/revision.spec.ts:57:35
+
+    Error: [2mexpect([22m[31mreceived[39m[2m).[22mtoBeLessThan[2m([22m[32mexpected[39m[2m)[22m
+
+    Expected: < [32m32[39m
+    Received:   [31m36.8[39m
+
+      56 |     }
+      57 |     expect.soft(measured.kickers).toBe(0);
+    > 58 |     expect.soft(parseFloat(measured.tradeHeading)).toBeLessThan(parseFloat(measured.h1));
+         |                                                    ^
+      59 |   }
+      60 |   await evidence("layout", results);
+      61 | });
+        at /root/.identitymd/work/552cb388-cfa0-4be1-af2a-faadaa394445/5037bcee-8984-4148-bc04-5fc4602116af/web/tests/revision.spec.ts:58:52
+
+    Error: [2mexpect([22m[31mreceived[39m[2m).[22mtoBeLessThanOrEqual[2m([22m[32mexpected[39m[2m)[22m
+
+    Expected: <= [32m700[39m
+    Received:    [31m1047.671875[39m
+
+      49 |     expect.soft(measured.scrollY).toBe(0);
+      50 |     expect.soft(measured.scrollWidth).toBeLessThanOrEqual(viewport.width);
+    > 51 |     expect.soft(measured.cell.bottom).toBeLessThanOrEqual(viewport.height);
+         |                                       ^
+      52 |     if (viewport.width !== 320) {
+      53 |       expect.soft(measured.message.bottom).toBeLessThanOrEqual(viewport.height);
+      54 |       expect.soft(measured.action.bottom).toBeLessThanOrEqual(viewport.height);
+        at /root/.identitymd/work/552cb388-cfa0-4be1-af2a-faadaa394445/5037bcee-8984-4148-bc04-5fc4602116af/web/tests/revision.spec.ts:51:39
+
+    Error: [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m0[39m
+    Received: [31m5[39m
+
+      55 |       expect.soft(measured.fee.bottom).toBeLessThanOrEqual(viewport.height);
+      56 |     }
+    > 57 |     expect.soft(measured.kickers).toBe(0);
+         |                                   ^
+      58 |     expect.soft(parseFloat(measured.tradeHeading)).toBeLessThan(parseFloat(measured.h1));
+      59 |   }
+      60 |   await evidence("layout", results);
+        at /root/.identitymd/work/552cb388-cfa0-4be1-af2a-faadaa394445/5037bcee-8984-4148-bc04-5fc4602116af/web/tests/revision.spec.ts:57:35
+
+    Error: [2mexpect([22m[31mreceived[39m[2m).[22mtoBeLessThan[2m([22m[32mexpected[39m[2m)[22m
+
+    Expected: < [32m32[39m
+    Received:   [31m36.8[39m
+
+      56 |     }
+      57 |     expect.soft(measured.kickers).toBe(0);
+    > 58 |     expect.soft(parseFloat(measured.tradeHeading)).toBeLessThan(parseFloat(measured.h1));
+         |                                                    ^
+      59 |   }
+      60 |   await evidence("layout", results);
+      61 | });
+        at /root/.identitymd/work/552cb388-cfa0-4be1-af2a-faadaa394445/5037bcee-8984-4148-bc04-5fc4602116af/web/tests/revision.spec.ts:58:52
+
+    Error: [2mexpect([22m[31mreceived[39m[2m).[22mtoBeLessThanOrEqual[2m([22m[32mexpected[39m[2m)[22m
+
+    Expected: <= [32m900[39m
+    Received:    [31m951.171875[39m
+
+      49 |     expect.soft(measured.scrollY).toBe(0);
+      50 |     expect.soft(measured.scrollWidth).toBeLessThanOrEqual(viewport.width);
+    > 51 |     expect.soft(measured.cell.bottom).toBeLessThanOrEqual(viewport.height);
+         |                                       ^
+      52 |     if (viewport.width !== 320) {
+      53 |       expect.soft(measured.message.bottom).toBeLessThanOrEqual(viewport.height);
+      54 |       expect.soft(measured.action.bottom).toBeLessThanOrEqual(viewport.height);
+        at /root/.identitymd/work/552cb388-cfa0-4be1-af2a-faadaa394445/5037bcee-8984-4148-bc04-5fc4602116af/web/tests/revision.spec.ts:51:39
+
+    Error: [2mexpect([22m[31mreceived[39m[2m).[22mtoBeLessThanOrEqual[2m([22m[32mexpected[39m[2m)[22m
+
+    Expected: <= [32m900[39m
+    Received:    [31m1178.140625[39m
+
+      51 |     expect.soft(measured.cell.bottom).toBeLessThanOrEqual(viewport.height);
+      52 |     if (viewport.width !== 320) {
+    > 53 |       expect.soft(measured.message.bottom).toBeLessThanOrEqual(viewport.height);
+         |                                            ^
+      54 |       expect.soft(measured.action.bottom).toBeLessThanOrEqual(viewport.height);
+      55 |       expect.soft(measured.fee.bottom).toBeLessThanOrEqual(viewport.height);
+      56 |     }
+        at /root/.identitymd/work/552cb388-cfa0-4be1-af2a-faadaa394445/5037bcee-8984-4148-bc04-5fc4602116af/web/tests/revision.spec.ts:53:44
+
+    Error: [2mexpect([22m[31mreceived[39m[2m).[22mtoBeLessThanOrEqual[2m([22m[32mexpected[39m[2m)[22m
+
+    Expected: <= [32m900[39m
+    Received:    [31m1296.921875[39m
+
+      52 |     if (viewport.width !== 320) {
+      53 |       expect.soft(measured.message.bottom).toBeLessThanOrEqual(viewport.height);
+    > 54 |       expect.soft(measured.action.bottom).toBeLessThanOrEqual(viewport.height);
+         |                                           ^
+      55 |       expect.soft(measured.fee.bottom).toBeLessThanOrEqual(viewport.height);
+      56 |     }
+      57 |     expect.soft(measured.kickers).toBe(0);
+        at /root/.identitymd/work/552cb388-cfa0-4be1-af2a-faadaa394445/5037bcee-8984-4148-bc04-5fc4602116af/web/tests/revision.spec.ts:54:43
+
+    Error: [2mexpect([22m[31mreceived[39m[2m).[22mtoBeLessThanOrEqual[2m([22m[32mexpected[39m[2m)[22m
+
+    Expected: <= [32m900[39m
+    Received:    [31m1350.515625[39m
+
+      53 |       expect.soft(measured.message.bottom).toBeLessThanOrEqual(viewport.height);
+      54 |       expect.soft(measured.action.bottom).toBeLessThanOrEqual(viewport.height);
+    > 55 |       expect.soft(measured.fee.bottom).toBeLessThanOrEqual(viewport.height);
+         |                                        ^
+      56 |     }
+      57 |     expect.soft(measured.kickers).toBe(0);
+      58 |     expect.soft(parseFloat(measured.tradeHeading)).toBeLessThan(parseFloat(measured.h1));
+        at /root/.identitymd/work/552cb388-cfa0-4be1-af2a-faadaa394445/5037bcee-8984-4148-bc04-5fc4602116af/web/tests/revision.spec.ts:55:40
+
+    Error: [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m0[39m
+    Received: [31m5[39m
+
+      55 |       expect.soft(measured.fee.bottom).toBeLessThanOrEqual(viewport.height);
+      56 |     }
+    > 57 |     expect.soft(measured.kickers).toBe(0);
+         |                                   ^
+      58 |     expect.soft(parseFloat(measured.tradeHeading)).toBeLessThan(parseFloat(measured.h1));
+      59 |   }
+      60 |   await evidence("layout", results);
+        at /root/.identitymd/work/552cb388-cfa0-4be1-af2a-faadaa394445/5037bcee-8984-4148-bc04-5fc4602116af/web/tests/revision.spec.ts:57:35
+
+    Error Context: ../test/scratch/playwright-results/revision-revision-initial--f4bae-es-cells-and-claim-controls/error-context.md
+
+  2) tests/revision.spec.ts:63:1 › revision: share image metadata resolves to a real 1200 by 630 image 
+
+    Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoHaveCount[2m([22m[32mexpected[39m[2m)[22m failed
+
+    Locator:  locator('meta[property="og:image"]')
+    Expected: [32m1[39m
+    Received: [31m0[39m
+    Timeout:  12000ms
+
+    Call log:
+    [2m  - Expect "toHaveCount" with timeout 12000ms[22m
+    [2m  - waiting for locator('meta[property="og:image"]')[22m
+    [2m    16 × locator resolved to 0 elements[22m
+    [2m       - unexpected value "0"[22m
+
+
+      68 |   );
+      69 |   await evidence("share", metadata);
+    > 70 |   await expect(page.locator('meta[property="og:image"]')).toHaveCount(1);
+         |                                                           ^
+      71 |   const path = await page.locator('meta[property="og:image"]').getAttribute("content");
+      72 |   const dimensions = await page.evaluate(async (src) => {
+      73 |     const image = new Image();
+        at /root/.identitymd/work/552cb388-cfa0-4be1-af2a-faadaa394445/5037bcee-8984-4148-bc04-5fc4602116af/web/tests/revision.spec.ts:70:59
+
+    Error Context: ../test/scratch/playwright-results/revision-revision-share-im-88873-to-a-real-1200-by-630-image/error-context.md
+
+  3) tests/revision.spec.ts:83:3 › revision: exact permission and swap review at step 1 ────────────
+
+    Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoContainText[2m([22m[32mexpected[39m[2m)[22m failed
+
+    Locator: locator('.quote-details > .helper')
+    Expected substring: [32m"exactly 0.00001[7m9999999999999 IMD[27m"[39m
+    Received string:    [31m"[7mApprove [27mexactly 0.00001[7m IMD for Permit2.[27m"[39m
+    Timeout: 12000ms
+
+    Call log:
+    [2m  - Expect "toContainText" with timeout 12000ms[22m
+    [2m  - waiting for locator('.quote-details > .helper')[22m
+    [2m    16 × locator resolved to <p class="helper">Approve exactly 0.00001 IMD for Permit2.</p>[22m
+    [2m       - unexpected value "Approve exactly 0.00001 IMD for Permit2."[22m
+
+
+       99 |       review: await review.textContent(), transactions: chain.transactions.length,
+      100 |     });
+    > 101 |     await expect(review).toContainText("exactly 0.000019999999999999 IMD");
+          |                          ^
+      102 |     if (step === 3) await expect(review).toContainText("at least 0.000039799999999998 COMB");
+      103 |     expect(chain.transactions).toHaveLength(0);
+      104 |   });
+        at /root/.identitymd/work/552cb388-cfa0-4be1-af2a-faadaa394445/5037bcee-8984-4148-bc04-5fc4602116af/web/tests/revision.spec.ts:101:26
+
+    Error Context: ../test/scratch/playwright-results/revision-revision-exact-permission-and-swap-review-at-step-1/error-context.md
+
+  4) tests/revision.spec.ts:83:3 › revision: exact permission and swap review at step 2 ────────────
+
+    Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoContainText[2m([22m[32mexpected[39m[2m)[22m failed
+
+    Locator: locator('.quote-details > .helper')
+    Expected substring: [32m"exactly 0.000019999999999999 IMD"[39m
+    Received string:    [31m"Allow the router to spend exactly 0.00001 IMD. Permission expires in one hour."[39m
+    Timeout: 12000ms
+
+    Call log:
+    [2m  - Expect "toContainText" with timeout 12000ms[22m
+    [2m  - waiting for locator('.quote-details > .helper')[22m
+    [2m    16 × locator resolved to <p class="helper">Allow the router to spend exactly 0.00001 IMD. Pe…</p>[22m
+    [2m       - unexpected value "Allow the router to spend exactly 0.00001 IMD. Permission expires in one hour."[22m
+
+
+       99 |       review: await review.textContent(), transactions: chain.transactions.length,
+      100 |     });
+    > 101 |     await expect(review).toContainText("exactly 0.000019999999999999 IMD");
+          |                          ^
+      102 |     if (step === 3) await expect(review).toContainText("at least 0.000039799999999998 COMB");
+      103 |     expect(chain.transactions).toHaveLength(0);
+      104 |   });
+        at /root/.identitymd/work/552cb388-cfa0-4be1-af2a-faadaa394445/5037bcee-8984-4148-bc04-5fc4602116af/web/tests/revision.spec.ts:101:26
+
+    Error Context: ../test/scratch/playwright-results/revision-revision-exact-permission-and-swap-review-at-step-2/error-context.md
+
+  5) tests/revision.spec.ts:83:3 › revision: exact permission and swap review at step 3 ────────────
+
+    Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoContainText[2m([22m[32mexpected[39m[2m)[22m failed
+
+    Locator: locator('.quote-details > .helper')
+    Expected substring: [32m"exactly 0.00001[7m9999999999999 IMD[27m"[39m
+    Received string:    [31m"[7mSwap [27mexactly 0.00001[7m IMD for at least 0.00003 COMB.[27m"[39m
+    Timeout: 12000ms
+
+    Call log:
+    [2m  - Expect "toContainText" with timeout 12000ms[22m
+    [2m  - waiting for locator('.quote-details > .helper')[22m
+    [2m    16 × locator resolved to <p class="helper">Swap exactly 0.00001 IMD for at least 0.00003 COM…</p>[22m
+    [2m       - unexpected value "Swap exactly 0.00001 IMD for at least 0.00003 COMB."[22m
+
+
+       99 |       review: await review.textContent(), transactions: chain.transactions.length,
+      100 |     });
+    > 101 |     await expect(review).toContainText("exactly 0.000019999999999999 IMD");
+          |                          ^
+      102 |     if (step === 3) await expect(review).toContainText("at least 0.000039799999999998 COMB");
+      103 |     expect(chain.transactions).toHaveLength(0);
+      104 |   });
+        at /root/.identitymd/work/552cb388-cfa0-4be1-af2a-faadaa394445/5037bcee-8984-4148-bc04-5fc4602116af/web/tests/revision.spec.ts:101:26
+
+    Error Context: ../test/scratch/playwright-results/revision-revision-exact-permission-and-swap-review-at-step-3/error-context.md
+
+  6) tests/revision.spec.ts:107:1 › revision: connecting preserves an anonymous claim draft without submitting 
+
+    Error: [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m"Hello future human"[39m
+    Received: [31m""[39m
+
+      122 |   };
+      123 |   await evidence("draft", result);
+    > 124 |   expect.soft(result.draft).toBe("Hello future human");
+          |                             ^
+      125 |   expect.soft(result.counter).toBe("18 / 64 bytes");
+      126 |   expect.soft(result.status).toBe("");
+      127 |   expect(result.transactions).toBe(0);
+        at /root/.identitymd/work/552cb388-cfa0-4be1-af2a-faadaa394445/5037bcee-8984-4148-bc04-5fc4602116af/web/tests/revision.spec.ts:124:29
+
+    Error: [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m"[7m18[27m / 64 bytes"[39m
+    Received: [31m"[7m0[27m / 64 bytes"[39m
+
+      123 |   await evidence("draft", result);
+      124 |   expect.soft(result.draft).toBe("Hello future human");
+    > 125 |   expect.soft(result.counter).toBe("18 / 64 bytes");
+          |                               ^
+      126 |   expect.soft(result.status).toBe("");
+      127 |   expect(result.transactions).toBe(0);
+      128 |   await expect.soft(page.getByRole("button", { name: "Claim cell #0", exact: true })).toBeEnabled();
+        at /root/.identitymd/work/552cb388-cfa0-4be1-af2a-faadaa394445/5037bcee-8984-4148-bc04-5fc4602116af/web/tests/revision.spec.ts:125:31
+
+    Error: [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m""[39m
+    Received: [31m"Action could not completeConnect to the correct network and refresh verified data before continuing."[39m
+
+      124 |   expect.soft(result.draft).toBe("Hello future human");
+      125 |   expect.soft(result.counter).toBe("18 / 64 bytes");
+    > 126 |   expect.soft(result.status).toBe("");
+          |                              ^
+      127 |   expect(result.transactions).toBe(0);
+      128 |   await expect.soft(page.getByRole("button", { name: "Claim cell #0", exact: true })).toBeEnabled();
+      129 | });
+        at /root/.identitymd/work/552cb388-cfa0-4be1-af2a-faadaa394445/5037bcee-8984-4148-bc04-5fc4602116af/web/tests/revision.spec.ts:126:30
+
+    Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoBeEnabled[2m([22m[2m)[22m failed
+
+    Locator:  getByRole('button', { name: 'Claim cell #0', exact: true })
+    Expected: enabled
+    Received: disabled
+    Timeout:  12000ms
+
+    Call log:
+    [2m  - Expect "soft toBeEnabled" with timeout 12000ms[22m
+    [2m  - waiting for getByRole('button', { name: 'Claim cell #0', exact: true })[22m
+    [2m    15 × locator resolved to <button disabled type="submit" class="button primary wide">…</button>[22m
+    [2m       - unexpected value "disabled"[22m
+
+
+      126 |   expect.soft(result.status).toBe("");
+      127 |   expect(result.transactions).toBe(0);
+    > 128 |   await expect.soft(page.getByRole("button", { name: "Claim cell #0", exact: true })).toBeEnabled();
+          |                                                                                       ^
+      129 | });
+      130 |
+      131 | test("revision: cell changes and account replacement still clear private drafts", async ({ page }) => {
+        at /root/.identitymd/work/552cb388-cfa0-4be1-af2a-faadaa394445/5037bcee-8984-4148-bc04-5fc4602116af/web/tests/revision.spec.ts:128:87
+
+    Error Context: ../test/scratch/playwright-results/revision-revision-connecti-5bfce-im-draft-without-submitting/error-context.md
+
+  6 failed
+    tests/revision.spec.ts:14:1 › revision: initial viewport prioritizes cells and claim controls ──
+    tests/revision.spec.ts:63:1 › revision: share image metadata resolves to a real 1200 by 630 image 
+    tests/revision.spec.ts:83:3 › revision: exact permission and swap review at step 1 ─────────────
+    tests/revision.spec.ts:83:3 › revision: exact permission and swap review at step 2 ─────────────
+    tests/revision.spec.ts:83:3 › revision: exact permission and swap review at step 3 ─────────────
+    tests/revision.spec.ts:107:1 › revision: connecting preserves an anonymous claim draft without submitting 
+  1 passed (1.4m)
+npm notice
+npm notice New major version of npm available! 11.19.0 -> 12.2.0
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.0
+npm notice To update run: npm install -g npm@12.2.0
+npm notice

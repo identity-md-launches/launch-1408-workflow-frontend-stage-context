@@ -2,7 +2,7 @@
 
 ## Overview
 
-The Comb is a wall of 1,024 cells for people leaving short public messages on Ethereum. The implemented page is deliberately dark, with warm cream text, amber honeycomb states and a quiet editorial hierarchy. The large two-line invitation leads to the live wall; the optional token trade follows it. The visual character and hero wording come from the approved brief. The compact seal, typography and spacing are implementation choices.
+The Comb is a wall of 1,024 cells for people leaving short public messages on Ethereum. The implemented page is deliberately dark, with warm cream text, amber honeycomb states and a quiet editorial hierarchy. The required headline leads directly to the live wall and editor; statistics and the optional token trade follow the wall. The visual character and hero wording come from the approved brief. The compact seal, typography and spacing are implementation choices.
 
 `web/src/styles.css` is the design source of truth. `web/src/App.tsx` composes the page. There is no UI kit, theme switch, external image service or animation library. The honeycomb, mark and icons are native SVG/CSS. All text and imagery are local apart from runtime chain reads.
 
@@ -29,7 +29,7 @@ The palette is stored as hex primitives and semantic roles in `styles.css:33`.
 
 The grid adds actual cell-specific colors: empty outline `#727b66`; claimed fill `#453416` and outline `#b98937`; Keeper fill `#6b4d1b` with the brighter accent outline. Claimed cells also have a dot; selection has a plus and `aria-pressed`. Status and eligibility are always explained in text.
 
-Rendered opaque pairs were measured in Chromium: body text/page **16.29:1**, primary text/surface **15.38:1**, dark text/amber primary button **10.91:1**, muted text/page **8.27:1**. Full measurements are in `docs/evidence/rendered-review.json`. These figures are not a blanket claim about every gradient, translucent decoration, disabled control or platform rendering.
+Rendered opaque pairs were measured in Chromium: body text/page **16.29:1**, primary text/surface **15.38:1**, dark text/amber primary button **10.91:1**, muted text/surface **7.81:1**. Full measurements are in `docs/evidence/rendered-review.json`. These figures are not a blanket claim about every gradient, translucent decoration, disabled control or platform rendering.
 
 ## Typography
 
@@ -37,11 +37,11 @@ Four local WOFF2 files ship with the export:
 
 - **Space Grotesk 400 and 500**: display headings, brand, prominent counts and token amounts. Fallback: sans-serif.
 - **DM Sans 400 and 600**: body, controls, labels and confirmations. Fallback: sans-serif.
-- System `ui-monospace, SFMono-Regular, Consolas, monospace`: addresses, byte counters, cell IDs and small editorial labels.
+- System `ui-monospace, SFMono-Regular, Consolas, monospace`: addresses, byte counters and cell IDs.
 
 The real font weights are loaded via `@font-face`; `font-display: swap` avoids invisible text and `font-synthesis: none` avoids fabricated weights. Browser checks confirm both intended families load. Latin assets are bundled; other writing systems use the browser fallback.
 
-`--text-xs`, `--text-sm`, `--text-body`, `--text-lg` are 0.75, 0.875, 1 and 1.125 rem. Functional captions have a 0.75 rem floor. The mono editorial eyebrow is 0.68 rem; smaller lettering is confined to the decorative, assistive-technology-hidden seal. Body line-height is 1.6; prose uses 1.7–1.8 where specified. Headings generally use 1.15 and negative tracking. The hero uses `clamp(2.5rem,4.7vw,4.1rem)` on large screens and a narrower clamp on mobile. Headings balance their wrapping; paragraphs use pretty wrapping and a 68ch default measure.
+`--text-xs`, `--text-sm`, `--text-body`, `--text-lg` are 0.75, 0.875, 1 and 1.125 rem. Functional captions have a 0.75 rem floor; smaller lettering is confined to the decorative, assistive-technology-hidden seal. Section headings have no eyebrow labels. Body line-height is 1.6; prose uses 1.7–1.8 where specified. Headings generally use 1.15 and negative tracking. The hero uses `clamp(2.5rem,4.7vw,4.1rem)` on large screens and `clamp(2rem,8.2vw,3.2rem)` below 43rem, retaining its amber second sentence. Mobile wall and trade headings share 1.6rem, below the 2rem headline floor. Headings balance their wrapping; paragraphs use pretty wrapping and a 68ch default measure.
 
 Inputs use 16px type on mobile, including the message editor and slippage field. Dynamic counters use tabular numerals. Full messages wrap, preserve line breaks, and isolate their own writing direction. Addresses use `<bdi>`, checksummed display and accessible full values.
 
@@ -50,6 +50,8 @@ Inputs use 16px type on mobile, including the message editor and slippage field.
 The `.shell` caps content at 1280px with 96px total horizontal space, reducing to 64px and then 36px. The spacing tokens cover 4, 8, 12, 16, 24, 32, 48 and 64px. Grouping relies on space; thin dividers mark major page sections and the wall's working areas.
 
 The desktop wall is a flexible map plus a 330px editor (310px at the first breakpoint). At **58rem**, the editor moves below the map in DOM reading order. The map deliberately scrolls independently in both axes; page-level horizontal scrolling is not part of the design. At default zoom, hexagons are 26×30px, spaced in a staggered 32×32 layout. The 100–200% zoom control increases targets up to 52×60px. At **43rem**, the page becomes a single column, navigation gets a second row, stats use two columns, trade/story stack, and the rules become a vertical list.
+
+The mobile header uses 8px vertical padding, and the hero uses 16px. The map viewport is 112px tall on phones, retaining all 1,024 scrollable cells, zoom and the finder in normal DOM order. The editor has 12px padding and a resizable 68px message field. This puts the map, message, wallet/claim control, public-message notice and fee disclosure within the initial 390×844 screen after live reads. At 320×700 the map is visible initially; the editor remains reachable by scrolling. Text enlargement and long/error states are allowed to grow rather than being clipped to a screen-height target. Desktop map sizing stays unchanged; its editor uses a three-row field with a 96px minimum.
 
 Breakpoints: **72rem**, **58rem**, **43rem**. The trade section uses two columns until the mobile breakpoint. The story follows the same shared margins. Dialogs use `min(480px,100% - 32px)` and a scrollable maximum height of 85dvh.
 
@@ -82,6 +84,10 @@ Hexagonal paths are specific to the product. The button's polygon clipping follo
 | `TxStatus` | `web/src/ui.tsx:268` | Stable polite status region with simulation/signing/pending/confirmed/error copy, explorer transaction link and delayed-confirmation recovery |
 
 Forms disable transactional actions whenever verification, chain, ownership, cooldown, amounts or allowance prerequisites fail. Disabled controls have adjacent explanations. Errors persist near the relevant action. Unknown or failed live reads never become fabricated empty cells or balances.
+
+The connect control has `type="button"` and cannot submit its enclosing form. An anonymous draft survives the first account connection; changing cells, replacing a connected account or disconnecting clears it. Approval and swap review text displays every token decimal, including the guaranteed minimum, and wraps naturally.
+
+`web/share-card.html` reuses the local fonts, palette and hexagon geometry for the 1200×630 social artwork. `web/scripts/share-card.mjs` renders the committed `web/public/share-card.png`; Vite copies it to `dist/`. Its honeycomb is decorative, not claimed-cell data. Metadata uses relative image paths until the publisher supplies a real public origin.
 
 Motion is limited to hover/press feedback. Under `prefers-reduced-motion: no-preference`, controls use 150ms transitions on named properties, `cubic-bezier(.2,0,0,1)` for press scaling, and scale 0.96 on press; hex color/stroke transitions are 120ms. Motion is absent when reduced motion is requested.
 

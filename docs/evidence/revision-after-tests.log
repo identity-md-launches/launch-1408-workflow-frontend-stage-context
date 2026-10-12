@@ -1,0 +1,27 @@
+
+> the-comb-web@1.0.0 test:browser
+> playwright test revision.spec.ts
+
+[2m[WebServer] [22m(node:34) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 7 tests using 1 worker
+
+(node:46) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:46) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 tests/revision.spec.ts:14:1 › revision: initial viewport prioritizes cells and claim controls (1.7s)
+  ✓  2 tests/revision.spec.ts:74:1 › revision: share image metadata resolves to a real 1200 by 630 image (324ms)
+  ✓  3 tests/revision.spec.ts:106:3 › revision: exact permission and swap review at step 1 (1.2s)
+  ✓  4 tests/revision.spec.ts:106:3 › revision: exact permission and swap review at step 2 (2.2s)
+  ✓  5 tests/revision.spec.ts:106:3 › revision: exact permission and swap review at step 3 (1.3s)
+  ✓  6 tests/revision.spec.ts:136:1 › revision: connecting preserves an anonymous claim draft without submitting (1.3s)
+  ✓  7 tests/revision.spec.ts:171:1 › revision: cell changes and account replacement still clear private drafts (1.3s)
+
+  7 passed (12.0s)
+npm notice
+npm notice New major version of npm available! 11.19.0 -> 12.2.0
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.0
+npm notice To update run: npm install -g npm@12.2.0
+npm notice

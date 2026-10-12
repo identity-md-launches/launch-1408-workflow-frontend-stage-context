@@ -53,23 +53,15 @@ export function App({ runtime }: { runtime: Runtime }) {
       <main id="main" className="shell">
         <section className="hero" aria-labelledby="hero-title">
           <div className="hero-copy">
-            <p className="eyebrow">
-              <span className="tiny-hex" />
-              An open wall on Ethereum
-            </p>
             <h1 id="hero-title">
               The swarm built the hive.
               <br />
               <span>The last wall is yours.</span>
             </h1>
             <p>
-              Hundreds of agents built this hive and sealed it onchain.
+              Hundreds of agents built this hive onchain.
               <br className="desktop-break" /> They left 1,024 cells for humans.
-              Claim one. Leave your mark.
             </p>
-            <a className="hero-link" href="#wall">
-              Find your place <Icon name="arrow" />
-            </a>
           </div>
           <div className="hero-seal" aria-hidden="true">
             <div className="seal-ring">
@@ -85,52 +77,6 @@ export function App({ runtime }: { runtime: Runtime }) {
               <span className="seal-bottom">Cells. Stories. Small traces.</span>
             </div>
             <span className="seal-edition">The human wall · Est. onchain</span>
-          </div>
-        </section>
-        <section className="stats-bar" aria-label="Live wall statistics">
-          <div className="claimed-stat">
-            <span className="stat-label">Cells claimed</span>
-            <strong>
-              {snap ? snap.claimed.toLocaleString("en-US") : "—"}{" "}
-              <span>/ 1,024</span>
-            </strong>
-            <div className="progress-track" aria-hidden="true">
-              <i
-                style={{
-                  width: snap ? `${(snap.claimed / 1024) * 100}%` : "0%",
-                }}
-              />
-            </div>
-          </div>
-          <div>
-            <span className="stat-label">The Comb · COMB</span>
-            <Address
-              value={runtime.token.address}
-              explorer={network.explorer}
-              label="COMB contract"
-            />
-          </div>
-          <div>
-            <span className="stat-label">CombWall contract</span>
-            <Address
-              value={runtime.wall.address}
-              explorer={network.explorer}
-              label="CombWall contract"
-            />
-          </div>
-          <div className="network-stat">
-            <span className="stat-label">Network</span>
-            <strong>
-              <span className={`status-dot ${data.verified ? "live" : ""}`} />
-              {network.name}
-            </strong>
-            <span className="helper">
-              {data.verified
-                ? "Live contract reads"
-                : data.error
-                  ? "RPC unavailable"
-                  : "Connecting to RPC"}
-            </span>
           </div>
         </section>
         {wallet.account && !wallet.correctChain && (
@@ -159,7 +105,6 @@ export function App({ runtime }: { runtime: Runtime }) {
         >
           <div className="section-heading wall-heading">
             <div>
-              <p className="eyebrow">The human wall</p>
               <h2 id="wall-title">Leave a little of yourself.</h2>
             </div>
             <div className="wall-utilities">
@@ -243,6 +188,52 @@ export function App({ runtime }: { runtime: Runtime }) {
             </div>
           )}
         </section>
+        <section className="stats-bar" aria-label="Live wall statistics">
+          <div className="claimed-stat">
+            <span className="stat-label">Cells claimed</span>
+            <strong>
+              {snap ? snap.claimed.toLocaleString("en-US") : "—"}{" "}
+              <span>/ 1,024</span>
+            </strong>
+            <div className="progress-track" aria-hidden="true">
+              <i
+                style={{
+                  width: snap ? `${(snap.claimed / 1024) * 100}%` : "0%",
+                }}
+              />
+            </div>
+          </div>
+          <div>
+            <span className="stat-label">The Comb · COMB</span>
+            <Address
+              value={runtime.token.address}
+              explorer={network.explorer}
+              label="COMB contract"
+            />
+          </div>
+          <div>
+            <span className="stat-label">CombWall contract</span>
+            <Address
+              value={runtime.wall.address}
+              explorer={network.explorer}
+              label="CombWall contract"
+            />
+          </div>
+          <div className="network-stat">
+            <span className="stat-label">Network</span>
+            <strong>
+              <span className={`status-dot ${data.verified ? "live" : ""}`} />
+              {network.name}
+            </strong>
+            <span className="helper">
+              {data.verified
+                ? "Live contract reads"
+                : data.error
+                  ? "RPC unavailable"
+                  : "Connecting to RPC"}
+            </span>
+          </div>
+        </section>
         <Trade
           runtime={runtime}
           data={data}
@@ -256,7 +247,6 @@ export function App({ runtime }: { runtime: Runtime }) {
           aria-labelledby="about-title"
         >
           <div className="about-intro">
-            <p className="eyebrow">Made by many. Kept by you.</p>
             <h2 id="about-title">
               The machines built it.
               <br />

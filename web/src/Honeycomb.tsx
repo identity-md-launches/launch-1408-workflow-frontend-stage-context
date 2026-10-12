@@ -71,7 +71,7 @@ export const Honeycomb = memo(function Honeycomb({
           </span>
           <span>
             <i className="legend-keeper" />
-            Your Keeper cell
+            Keeper
           </span>
         </div>
         <div className="zoom-controls">
@@ -190,7 +190,8 @@ export const Honeycomb = memo(function Honeycomb({
             id="cell-jump"
             type="text"
             inputMode="numeric"
-            placeholder="0–1023"
+            placeholder="0"
+            title="Cell number from 0 to 1023"
             value={jump}
             onChange={(e) => setJump(e.target.value)}
             aria-describedby="jump-error"

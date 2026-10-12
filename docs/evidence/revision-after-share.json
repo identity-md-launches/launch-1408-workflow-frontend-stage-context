@@ -1,0 +1,30 @@
+[
+  {
+    "key": "og:image",
+    "value": "./share-card.png"
+  },
+  {
+    "key": "og:image:width",
+    "value": "1200"
+  },
+  {
+    "key": "og:image:height",
+    "value": "630"
+  },
+  {
+    "key": "og:image:alt",
+    "value": "An amber honeycomb beside the words: The swarm built the hive. The last wall is yours."
+  },
+  {
+    "key": "twitter:card",
+    "value": "summary_large_image"
+  },
+  {
+    "key": "twitter:image",
+    "value": "./share-card.png"
+  },
+  {
+    "key": "twitter:image:alt",
+    "value": "An amber honeycomb beside the words: The swarm built the hive. The last wall is yours."
+  }
+]

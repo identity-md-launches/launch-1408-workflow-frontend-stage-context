@@ -255,7 +255,6 @@ export function Trade({
       aria-labelledby="trade-heading"
     >
       <div className="trade-story">
-        <span className="eyebrow">A little more glow</span>
         <h2 id="trade-heading">Become a Keeper.</h2>
         <p>
           Holding COMB gives your cell a brighter glow. A small signal that
@@ -375,7 +374,8 @@ export function Trade({
               <div>
                 <dt>Minimum received</dt>
                 <dd>
-                  {amountText(quote.minimum, output.decimals)} {output.symbol}
+                  {amountText(quote.minimum, output.decimals, output.decimals)}{" "}
+                  {output.symbol}
                 </dd>
               </div>
               <div>
@@ -406,10 +406,10 @@ export function Trade({
             {!expired && (
               <p className="helper">
                 {step === 1
-                  ? `Approve exactly ${amountText(quote.amount, input.decimals)} ${input.symbol} for Permit2.`
+                  ? `Approve exactly ${amountText(quote.amount, input.decimals, input.decimals)} ${input.symbol} for Permit2.`
                   : step === 2
-                    ? `Allow the router to spend exactly ${amountText(quote.amount, input.decimals)} ${input.symbol}. Permission expires in one hour.`
-                    : `Swap exactly ${amountText(quote.amount, input.decimals)} ${input.symbol} for at least ${amountText(quote.minimum, output.decimals)} ${output.symbol}.`}
+                    ? `Allow the router to spend exactly ${amountText(quote.amount, input.decimals, input.decimals)} ${input.symbol}. Permission expires in one hour.`
+                    : `Swap exactly ${amountText(quote.amount, input.decimals, input.decimals)} ${input.symbol} for at least ${amountText(quote.minimum, output.decimals, output.decimals)} ${output.symbol}.`}
               </p>
             )}
           </div>

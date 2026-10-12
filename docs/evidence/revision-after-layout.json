@@ -1,0 +1,119 @@
+[
+  {
+    "width": 390,
+    "height": 844,
+    "scrollY": 0,
+    "scrollWidth": 390,
+    "map": {
+      "top": 362.6875,
+      "bottom": 474.6875,
+      "height": 112
+    },
+    "cell": {
+      "top": 382.6875,
+      "bottom": 412.6875,
+      "height": 30
+    },
+    "panel": {
+      "top": 555.28125,
+      "bottom": 973.671875,
+      "height": 418.390625
+    },
+    "message": {
+      "top": 631.9375,
+      "bottom": 699.9375,
+      "height": 68
+    },
+    "action": {
+      "top": 738.125,
+      "bottom": 786.125,
+      "height": 48
+    },
+    "fee": {
+      "top": 792.125,
+      "bottom": 811.921875,
+      "height": 19.796875
+    },
+    "h1": "32px",
+    "tradeHeading": "25.6px",
+    "kickers": 0
+  },
+  {
+    "width": 320,
+    "height": 700,
+    "scrollY": 0,
+    "scrollWidth": 320,
+    "map": {
+      "top": 484.21875,
+      "bottom": 596.21875,
+      "height": 112
+    },
+    "cell": {
+      "top": 504.21875,
+      "bottom": 534.21875,
+      "height": 30
+    },
+    "panel": {
+      "top": 736.1875,
+      "bottom": 1192.96875,
+      "height": 456.78125
+    },
+    "message": {
+      "top": 812.84375,
+      "bottom": 880.84375,
+      "height": 68
+    },
+    "action": {
+      "top": 937.625,
+      "bottom": 985.625,
+      "height": 48
+    },
+    "fee": {
+      "top": 991.625,
+      "bottom": 1031.21875,
+      "height": 39.59375
+    },
+    "h1": "32px",
+    "tradeHeading": "25.6px",
+    "kickers": 0
+  },
+  {
+    "width": 1440,
+    "height": 900,
+    "scrollY": 0,
+    "scrollWidth": 1440,
+    "map": {
+      "top": 587.953125,
+      "bottom": 1117.953125,
+      "height": 530
+    },
+    "cell": {
+      "top": 609.953125,
+      "bottom": 639.953125,
+      "height": 30
+    },
+    "panel": {
+      "top": 524.953125,
+      "bottom": 1231.53125,
+      "height": 706.578125
+    },
+    "message": {
+      "top": 627.328125,
+      "bottom": 724.71875,
+      "height": 97.390625
+    },
+    "action": {
+      "top": 797.5,
+      "bottom": 843.5,
+      "height": 46
+    },
+    "fee": {
+      "top": 857.5,
+      "bottom": 897.09375,
+      "height": 39.59375
+    },
+    "h1": "65.6px",
+    "tradeHeading": "54.4px",
+    "kickers": 0
+  }
+]

@@ -213,15 +213,6 @@ section[id] {
   font-size: var(--text-xs);
   line-height: 1.55;
 }
-.eyebrow {
-  font-family: var(--font-mono);
-  font-size: 0.68rem;
-  font-weight: 400;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--muted);
-  line-height: 1.5;
-}
 .button {
   display: inline-flex;
   align-items: center;
@@ -397,43 +388,21 @@ section[id] {
   grid-template-columns: minmax(0, 1fr) 240px;
   gap: 64px;
   align-items: center;
-  padding-block: 66px 60px;
-}
-.hero .eyebrow {
-  color: var(--accent);
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-.tiny-hex {
-  width: 8px;
-  height: 9px;
-  background: var(--accent);
-  clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+  padding-block: 24px;
 }
 h1 {
   font-size: clamp(2.5rem, 4.7vw, 4.1rem);
   letter-spacing: -0.055em;
   line-height: 1.13;
-  margin-block: 20px 22px;
+  margin-block: 0 16px;
 }
 .hero h1 span {
   color: var(--accent);
 }
-.hero-copy > p:not(.eyebrow) {
+.hero-copy > p {
   color: var(--muted);
   font-size: var(--text-body);
   line-height: 1.75;
-}
-.hero-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 18px;
-  margin-block-start: 25px;
-  font-size: var(--text-sm);
-  text-decoration: none;
-  border-bottom: 1px solid var(--accent);
-  padding-block-end: 5px;
 }
 .hero-seal {
   text-align: center;
@@ -589,10 +558,7 @@ h1 {
   font-size: var(--text-sm);
 }
 .wall-section {
-  padding-block-start: 48px;
-}
-.wall-heading .eyebrow {
-  margin-block-end: 10px;
+  padding-block: 8px 32px;
 }
 .wall-utilities {
   display: flex;
@@ -813,17 +779,6 @@ h1 {
   border-inline-start: 1px solid var(--border-subtle);
   min-width: 0;
 }
-.cell-eyebrow {
-  display: flex;
-  gap: 16px;
-  justify-content: space-between;
-  align-items: center;
-  color: var(--accent);
-  margin-block-end: 23px;
-}
-.cell-eyebrow .eyebrow {
-  font-size: 0.75rem;
-}
 .cell-title {
   display: flex;
   align-items: center;
@@ -843,7 +798,7 @@ h1 {
   line-height: 1.7;
 }
 .cell-panel form {
-  margin-block-start: 25px;
+  margin-block-start: 16px;
 }
 .field-heading {
   display: flex;
@@ -867,6 +822,7 @@ h1 {
   color: var(--error);
 }
 .cell-panel textarea {
+  min-height: 96px;
   font-size: var(--text-sm);
   line-height: 1.7;
   padding: 12px;
@@ -956,9 +912,6 @@ h1 {
   grid-template-columns: minmax(0, 1fr) minmax(360px, 430px);
   gap: 100px;
   align-items: center;
-}
-.trade-story > .eyebrow {
-  margin-block-end: 16px;
 }
 .trade-story h2 {
   font-size: clamp(2rem, 4vw, 3.4rem);
@@ -1221,9 +1174,6 @@ details[open] > summary {
   gap: 80px;
   padding-block: 56px 64px;
   border-top: 1px solid var(--border-subtle);
-}
-.about-intro .eyebrow {
-  margin-block-end: 18px;
 }
 .about-intro h2 {
   font-size: clamp(1.7rem, 2.8vw, 2.2rem);
@@ -1540,10 +1490,10 @@ details[open] > summary {
     width: calc(100% - 36px);
   }
   .site-header {
-    min-height: 80px;
-    gap: 12px;
+    min-height: 60px;
+    gap: 4px 12px;
     flex-wrap: wrap;
-    padding-block: 16px;
+    padding-block: 8px;
   }
   .brand {
     font-size: 1rem;
@@ -1560,17 +1510,17 @@ details[open] > summary {
     order: 3;
     width: 100%;
     justify-content: center;
-    gap: 36px;
+    gap: 12px;
     margin: 0;
     border-top: 1px solid var(--border-subtle);
-    padding-block-start: 8px;
+    padding-block-start: 0;
   }
   .site-header nav a:last-child {
     display: block;
   }
   .site-header nav a {
     font-size: 0.75rem;
-    padding: 8px;
+    padding: 4px 8px;
   }
   .connect-button {
     font-size: 0.75rem;
@@ -1582,27 +1532,19 @@ details[open] > summary {
     width: 15px;
   }
   .hero {
-    padding-block: 36px 38px;
-  }
-  .hero .eyebrow {
-    font-size: 0.75rem;
-    letter-spacing: 0.13em;
+    padding-block: 16px;
   }
   .hero h1 {
     font-size: clamp(2rem, 8.2vw, 3.2rem);
     line-height: 1.18;
-    margin-block: 17px 20px;
+    margin-block: 0 8px;
   }
-  .hero-copy > p:not(.eyebrow) {
+  .hero-copy > p {
     font-size: 0.875rem;
-    line-height: 1.8;
+    line-height: 1.5;
   }
   .desktop-break {
     display: none;
-  }
-  .hero-link {
-    margin-block-start: 20px;
-    font-size: 0.8rem;
   }
   .stats-bar {
     padding-block: 22px;
@@ -1632,16 +1574,13 @@ details[open] > summary {
     font-size: 0.75rem;
   }
   .wall-section {
-    padding-block-start: 32px;
+    padding-block-start: 0;
   }
   .wall-heading {
     gap: 8px;
   }
   .wall-heading h2 {
     font-size: 1.6rem;
-  }
-  .wall-heading .eyebrow {
-    font-size: 0.75rem;
   }
   .wall-utilities .button {
     font-size: 0.75rem;
@@ -1659,8 +1598,8 @@ details[open] > summary {
     border-radius: 10px;
   }
   .map-tools {
-    padding: 12px;
-    gap: 12px;
+    padding: 8px;
+    gap: 8px;
   }
   .legend {
     font-size: 0.75rem;
@@ -1675,33 +1614,56 @@ details[open] > summary {
   }
   .map-scroll {
     padding: 8px;
-    max-height: 350px;
-    min-height: 300px;
+    max-height: 112px;
+    min-height: 112px;
   }
   .map-caption {
-    padding: 12px;
+    padding: 4px 8px;
+    min-height: 32px;
     font-size: 0.75rem;
   }
   .map-bottom {
-    padding: 12px;
-    gap: 10px;
+    padding: 4px 8px;
+    gap: 8px;
   }
   .jump-form {
     font-size: 0.75rem;
   }
   .jump-form input {
     font-size: 1rem;
-    width: 80px;
+    width: 64px;
   }
   .map-bottom .text-button {
     font-size: 0.75rem;
     min-height: 36px;
   }
   .cell-panel {
-    padding: 24px 20px;
+    padding: 12px;
   }
-  .cell-panel .eyebrow {
-    font-size: 0.75rem;
+  .cell-panel form {
+    margin-block-start: 8px;
+  }
+  .cell-title {
+    margin-block-end: 8px;
+  }
+  .cell-panel textarea {
+    height: 68px;
+    min-height: 68px;
+    padding: 8px;
+    line-height: 1.5;
+  }
+  .cell-panel form > .helper {
+    margin-block: 4px 8px;
+  }
+  .cell-panel .fee-note {
+    margin-block-start: 6px;
+  }
+  .cell-panel .field-heading {
+    margin-block-end: 6px;
+  }
+  .read-status {
+    padding-block: 4px;
+    min-height: 28px;
   }
   .cell-title h3 {
     font-size: 1.5rem;
@@ -1736,7 +1698,7 @@ details[open] > summary {
     padding-block: 56px;
   }
   .trade-story h2 {
-    font-size: 2.3rem;
+    font-size: 1.6rem;
   }
   .trade-story > p {
     max-width: 100%;
